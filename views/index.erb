@@ -1,0 +1,22 @@
+<h1>Company Database</h1>
+
+<p>Divisions database:</p>
+
+<form action="/divisions" method="post">
+  <label for="name">Enter Divisions:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Add Division</button>
+</form>
+
+<% if @divisions.any?() %>
+<p>Check a division to see its employees:</p>
+
+<ul>
+  <% @divisions.each do |stylist| %>
+  <li><a href="/divisions/<%= division.id() %>"><%= division.name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>No divisions have been entered!</p>
+<% end %>

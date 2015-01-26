@@ -1,0 +1,24 @@
+<h1>Add a client to <%= @division.name() %> </h1>
+
+<form action="/employees" method="post">
+  <input id="division_id" name="division_id" type="hidden" value="<%= @division.id() %>">
+
+  <label for="name">Employee's Name:</label>
+  <input id="name" name="name" type="name">
+
+  <button type="submit">Add Client</button>
+</form>
+
+<% if @division.employee().any?() %>
+<h3>Here are all the clients that see this stylist:</h3>
+
+<ul>
+  <% @division.employee().each() do |division| %>
+  <li><%= division.name() %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>This stylist has no clients!</p>
+<% end %>
+
+<a href="/">Return to Main Page</a>
