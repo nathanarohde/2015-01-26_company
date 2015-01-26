@@ -18,3 +18,8 @@ post("/divisions") do
   @divisions = Division.all()
   erb(:index)
 end
+
+get('/divisions/:id') do
+  @division = Division.find(params['id'].to_i())
+  erb(:divisions)
+end
