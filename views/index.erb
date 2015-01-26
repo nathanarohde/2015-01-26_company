@@ -10,10 +10,10 @@
 </form>
 
 <% if @divisions.any?() %>
-<p>Check a division to see its employees:</p>
+<p>List all divisions in the company:</p>
 
 <ul>
-  <% @divisions.each do |stylist| %>
+  <% @divisions.each do |division| %>
   <li><a href="/divisions/<%= division.id() %>"><%= division.name() %></a></li>
   <% end %>
 </ul>
