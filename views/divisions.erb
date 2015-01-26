@@ -3,22 +3,23 @@
 <form action="/employees" method="post">
   <input id="division_id" name="division_id" type="hidden" value="<%=@division.id() %>">
 
-  <label for="name">Employee's Name:</label>
-  <input id="name" name="name" type="name">
+  <label for="employee_name">Employee's Name:</label>
+  <input id="employee_name" name="employee_name" type="employee_name">
 
   <button type="submit">Add Employee</button>
 </form>
 
-<% if @division.employee().any?() %>
+<% if @division.employees.any?() %>
+<!-- #It references the database name 'employees' rather than 'employee' method -->
 <h3>Employees in this division:</h3>
 
 <ul>
-  <% @division.employee().each() do |division| %>
+  <% @division.employees.each() do |division| %>
   <li><%= division.name() %></li>
   <% end %>
 </ul>
 <% else %>
-<p>This stylist has no clients!</p>
+<p>This division has no employees!</p>
 <% end %>
 
 <a href="/">Return to Main Page</a>
