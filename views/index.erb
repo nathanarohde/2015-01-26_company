@@ -14,7 +14,8 @@
 
 <ul>
   <% @divisions.each do |division| %>
-  <li><a href="/divisions/<%= division.id() %>"><%= division.name() %></a></li>
+  <li><a href="/divisions/<%= division.id() %>"><%= division.name() %></a><a href="/divisions/<%= division.id() %>/edit">   [Update]  </a></li>
+
   <% end %>
 </ul>
 <% else %>

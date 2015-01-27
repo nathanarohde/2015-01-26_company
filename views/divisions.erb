@@ -15,7 +15,7 @@
 
 <ul>
   <% @division.employees.each() do |division| %>
-  <li><%= division.name() %></li>
+  <li><%= division.name() %><a href="/employees/<%= division.id() %>/edit"> Update </a></li>
   <% end %>
 </ul>
 <% else %>
